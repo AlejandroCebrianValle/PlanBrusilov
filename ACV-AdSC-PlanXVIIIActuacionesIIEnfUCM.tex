@@ -1,0 +1,135 @@
+\documentclass[a4paper, oneside, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=black,
+	linkcolor=blue,
+	filecolor=blue,      
+	urlcolor=blue}
+\usepackage[small]{caption}
+\usepackage[figuresright]{rotating}
+% Añade al índice los entornos subsubsection
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+% Entornos multicolumna
+\usepackage{multicol}
+% Entornos de lista
+\usepackage{enumitem}
+% Entornos float (imagenes y demás)
+\usepackage{floatrow}	% Permite poner a un lado los pies de imagen
+\usepackage{subcaption}
+% Entornos matemáticos y elementos matemáticos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+% Letaras y caracteres especiales (por problemas usando €)
+\usepackage{marvosym}
+\DeclareUnicodeCharacter{20AC}{\EUR{}}
+% Entornos de tabla modificados
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{M}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{N}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{P}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{tabulary}
+\usepackage{longtable}
+% Entorno que permiten generar colores
+\usepackage[table, dvipsnames]{xcolor}
+%%%% Gris muy claro
+\definecolor{hiperlightgray}{gray}{0.85}
+% Entornos para añadir algoritmos y fragmentos de código
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{listings}
+\lstset{
+    backgroundcolor=\color{hiperlightgray},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+    basicstyle=\scriptsize,
+    showstringspaces=false,
+    formfeed=newpage,
+    tabsize=4,
+    commentstyle=\itshape,
+    morekeywords={models, lambda, forms}
+}
+
+% set margins for double-sided printing
+\usepackage[left=1.2cm, right=1.2cm, top=1.4cm, bottom=1.4cm, bindingoffset=1.2cm, head=15pt]{geometry} 
+\usepackage{setspace}
+\onehalfspacing
+% set headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L,RO]{\textsl{\leftmark}}
+\fancyhead[R,LO]{\thesisauthor}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% set APA citation style
+\usepackage{apacite}
+\usepackage[numbib,notlof,notlot,nottoc]{tocbibind}
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THESIS Parameters 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Manual Actuaciones para II Grado en Enfermería}
+
+\newcommand{\thesisdate}{\today}
+\newcommand{\thesisauthor}{Alejandro Cebrián del Valle} %input name
+\newcommand{\studentID}{70907} %input student ID
+\newcommand{\thesistype}{Manual} % Set either to Bachelor or Master
+\newcommand{\proyecto}{Aula de Simulación Clínica}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%TITLE PAGE (Pre-defined, just change parameters above)
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\include{./secciones/ACV-Titulo}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%TOC,TOF,TOT
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\clearpage
+	\pagenumbering{Roman}
+	\begingroup
+		\hypersetup{hidelinks}
+		\tableofcontents
+		\section*{Resumen}      
+			
+		%\clearpage
+		\listoffigures
+		\listoftables
+	\endgroup
+	\clearpage
+	\pagenumbering{arabic}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%MAIN PART
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\part{Introducción}
+	% SEC I - Aula
+	\input{./secciones/ACV-UCMRot-IIEnfermeriaParteA}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%APPENDICES
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\part*{Apendices}
+	%\appendix
+	%\clearpage
+	%\renewcommand*{\thesection}{\Alph{section}}\textbf{}
+	%\input{./secciones/ACV-GlosarioBiomedicoGRU}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%BIBLIOGRAPHY
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\part{Adendas}
+	%\renewcommand*{\thesection}{}\textbf{}
+	\bibliographystyle{apacite}
+	%\bibliography{secciones/Bibliography}
+\end{document}
