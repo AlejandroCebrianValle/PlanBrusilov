@@ -5,12 +5,13 @@
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	citecolor=black,
-	linkcolor=blue,
-	filecolor=blue,      
-	urlcolor=blue}
+    \hypersetup{
+    	colorlinks=true,
+    	citecolor=black,
+    	linkcolor=blue,
+    	filecolor=blue,      
+    	urlcolor=blue
+    }
 \usepackage[small]{caption}
 \usepackage[figuresright]{rotating}
 % Añade al índice los entornos subsubsection
@@ -38,7 +39,6 @@
 \newcolumntype{N}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{P}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \usepackage{tabulary}
-\usepackage{longtable}
 % Entorno que permiten generar colores
 \usepackage[table, dvipsnames]{xcolor}
 %%%% Gris muy claro
@@ -64,9 +64,9 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
+\fancyhead[R]{\thesisauthor}
+\fancyhead[L]{Manual Actuaciones para II Grado en Enfermería}
 \fancyfoot{}
-\fancyhead[L,RO]{\textsl{\leftmark}}
-\fancyhead[R,LO]{\thesisauthor}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -82,6 +82,7 @@
 
 \title{Manual Actuaciones para II Grado en Enfermería}
 
+\newcommand{\titlework}{\title}
 \newcommand{\thesisdate}{\today}
 \newcommand{\thesisauthor}{Alejandro Cebrián del Valle} %input name
 \newcommand{\studentID}{70907} %input student ID
@@ -121,9 +122,10 @@
 	\clearpage
 	% SEC II - Guia para los seminarios
 	\input{./secciones/ACV-UCMRot-IIEnfermeriaParteBGuiaSem}
+	\input{./secciones/ACV-UCMRot-IIEnfermeriaParteBCasos}
 	% SEC III - Rúbricas
 	\input{./secciones/ACV-UCMRot-IIEnfermeriaParteBRubrica}
-	%\input{./secciones/ACV-UCMRot-IIEnfermeriaParteBRubricaElsevier}
+	\input{./secciones/ACV-UCMRot-IIEnfermeriaParteBRubricaElsevier}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%APPENDICES
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
